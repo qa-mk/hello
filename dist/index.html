@@ -11,7 +11,7 @@
 
     <script>
         console.log('result')
-        fetch('/ftx')
+        fetch('/.netlify/functions/api/ftx')
             .then(response => response.json())
             .then(({ result }) => {
                 const divFragment = new DocumentFragment()
