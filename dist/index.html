@@ -11,7 +11,7 @@
 
     <script>
         console.log('result')
-        fetch('https://sad-villani-f6bb99.netlify.app/.netlify/functions/api/ftx')
+        fetch('/ftx')
             .then(response => response.json())
             .then(({ result }) => {
                 const divFragment = new DocumentFragment()

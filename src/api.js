@@ -19,7 +19,7 @@ router.get("/ftx", async (req, res) => {
     }
   });
 
-app.use(`/.netlify/functions/api`, router);
+app.use('/.netlify/functions/api', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
