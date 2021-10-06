@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        console.log('result')
+        fetch('https://sad-villani-f6bb99.netlify.app/.netlify/functions/api/ftx')
+            .then(response => response.json())
+            .then(({ result }) => {
+                const divFragment = new DocumentFragment()
+                let h1 = null
+
+                result.forEach(ticker => {
+                    h1 = document.createElement('h1')
+                    h1.textContent = JSON.stringify(ticker)
+                    divFragment.appendChild(h1)
+                })
+
+                document.getElementById('app').appendChild(divFragment)
+            })
+            .catch(err => console.log(err.message))
+    </script>
+</body>
+</html>
